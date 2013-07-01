@@ -49,7 +49,7 @@
         [office='ngo'] {
             marker-file: url('icons/poi/[office]-18.png');
             [office='ngo'] {
-                [name='Oxfam'] { marker-file: url('icons/poi/oxfam-18.png'); }
+                [office='pouet'] { marker-file: url('icons/poi/oxfam-18.png'); }
             }
         }
         [amenity='kindergarten'],
