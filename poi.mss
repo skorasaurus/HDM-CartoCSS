@@ -3,7 +3,7 @@
         [office='ngo'] 
          {
             [office='ngo'] {
-            [office='pouet'] { marker-file: url('icons/poi/oxfam-18.png'); }
+            [name='Oxfam'] { marker-file: url('icons/poi/oxfam-18.png'); }
             }
         }
      }
