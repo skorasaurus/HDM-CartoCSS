@@ -8,11 +8,14 @@ Compare: http://compare.fluv.io/
 
 ## Deploying
 
+
 Be aware that you may run into unexpected errors if you have a different development environment than those that we've worked with: 
-- Ubuntu 12.04 and 13.04
-- Tilemill Master.  
+- Ubuntu 12.04 or 13.04
+- Tilemill Master (required)
 - PostGIS 1.5 or 2.0.x 
 - Those on PostGIS 2.0.x and Ubuntu 12.04 can use the [install-tilemill-from-source.sh script](https://gist.github.com/skorasaurus/5911182) to set-up your environment
+
+
 
 ### Local configuration
 
