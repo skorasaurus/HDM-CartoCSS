@@ -223,6 +223,8 @@ Map {
     [zoom=17]{ line-width: 1; }
     [zoom=18]{ line-width: 1.5; }
     [zoom>18]{ line-width: 2; }
+
+     
   }
     [type='ditch'],
     [type='drain'] {
@@ -245,10 +247,10 @@ Map {
       [zoom>=19]{ line-width: 12; }
       
       [seasonal='yes']{
-        line-color: lighten(@water,25%);
+        line-color: lighten(@water,20%); 
         
         ::seasonal  {
-        line-color: @water;
+          line-color: @water;
           line-dasharray: 2,4;
           line-cap: butt;
          }
