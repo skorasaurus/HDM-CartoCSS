@@ -245,11 +245,11 @@ Map {
       [zoom>=19]{ line-width: 12; }
       
       [seasonal='yes']{
-        line-color: orange;
+        line-color: lighten(@water,25%);
         
         ::seasonal  {
         line-color: @water;
-          line-dasharray: 4,4;
+          line-dasharray: 2,4;
           line-cap: butt;
          }
       }  
