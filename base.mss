@@ -217,22 +217,13 @@ Map {
   line-color: @water;
   [type='river'],
   [type='canal'] {
-    ::seasonal {
-      line-color: lighten(@water, 10%);
-      line-dasharray: 4,4;
-      line-cap: butt;
-    }
-    ::default {
-      line-color: @water;
-      line-cap: round;
-      line-join: round;
-    }
-    ::default, ::seasonal[seasonal='yes'] {
-      line-width: 6;
       [zoom=16]{ line-width: 7; }
       [zoom=17]{ line-width: 8; }
       [zoom=18]{ line-width: 9; }
       [zoom>=19]{ line-width: 12; }
+       [seasonal='yes'] {
+        line-color: @water;
+         line-opacity: .25;
     }
   }
   [type='stream'] {
