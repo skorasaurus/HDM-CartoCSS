@@ -223,7 +223,8 @@ Map {
       [zoom>=19]{ line-width: 12; }
        [seasonal='yes'] {
         line-color: @water;
-         line-opacity: .25;
+        
+      line-comp-op: saturation;
     }
   }
   [type='stream'] {
