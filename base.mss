@@ -215,43 +215,51 @@ Map {
   
 #waterway_high[zoom>=15] {
   line-color: @water;
-  [type='river'],
-  [type='canal'] {
-    ::seasonal {
-      line-color: lighten(@water, 10%);
-      line-dasharray: 4,4;
-      line-cap: butt;
-    }
-    ::default {
-      line-color: @water;
-      line-cap: round;
-      line-join: round;
-    }
-    ::default, ::seasonal[seasonal='yes'] {
-      line-width: 6;
-      [zoom=16]{ line-width: 7; }
-      [zoom=17]{ line-width: 8; }
-      [zoom=18]{ line-width: 9; }
-      [zoom>=19]{ line-width: 12; }
-    }
-  }
-  [type='stream'] {
+  line-cap: round;
+  line-join: round;
+    [type='stream'] {
     [zoom=15]{ line-width: 0.6; }
     [zoom=16]{ line-width: 0.8; }
     [zoom=17]{ line-width: 1; }
     [zoom=18]{ line-width: 1.5; }
     [zoom>18]{ line-width: 2; }
+
+     
   }
-  [type='ditch'],
-  [type='drain'] {
-    [zoom=15]{ line-width: 0.1; }
-    [zoom=16]{ line-width: 0.3; }
-    [zoom=17]{ line-width: 0.5; }
-    [zoom=18]{ line-width: 0.7; }
-    [zoom=19]{ line-width: 1; }
-    [zoom>19]{ line-width: 1.5; }
+    [type='ditch'],
+    [type='drain'] {
+      [zoom=15]{ line-width: 0.1; }
+      [zoom=16]{ line-width: 0.3; }
+      [zoom=17]{ line-width: 0.5; }
+      [zoom=18]{ line-width: 0.7; }
+      [zoom=19]{ line-width: 1; }
+      [zoom>19]{ line-width: 1.5; }
+    }
+  
+    [type='river'],
+    [type='canal'] {
+        ::default {
+      line-width: 6;
+      line-color: @water;
+      [zoom=16]{ line-width: 7; }
+      [zoom=17]{ line-width: 8; }
+      [zoom=18]{ line-width: 9; }
+      [zoom>=19]{ line-width: 12; }
+      
+      [seasonal='yes']{
+        line-color: lighten(@water,16%); 
+        
+        ::seasonal  {
+          line-color: @water;
+          line-dasharray: 6,1;
+          line-cap: butt;
+         }
+      }  
+
+    }
   }
 }
+
 
 /* ================================================================== */
 /* ADMINISTRATIVE BOUNDARIES
