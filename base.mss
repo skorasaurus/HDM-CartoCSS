@@ -218,13 +218,23 @@ Map {
   line-cap: round;
   line-join: round;
     [type='stream'] {
+     [seasonal='yes']{
+        line-color: @water;
+        line-cap: butt;
+        [zoom=15] {
+                  line-width: 4;
+                  line-dasharray: 9,7,2;}
+        [zoom=16] {line-dasharray: 9,7,2;}  
+        [zoom=17] {line-dasharray: 9,7,2;}
+        [zoom>=18] {line-dasharray: 9,7,2;}
+         }
+     
     [zoom=15]{ line-width: 0.6; }
     [zoom=16]{ line-width: 0.8; }
     [zoom=17]{ line-width: 1; }
     [zoom=18]{ line-width: 1.5; }
     [zoom>18]{ line-width: 2; }
-
-     
+       
   }
     [type='ditch'],
     [type='drain'] {
@@ -245,10 +255,8 @@ Map {
       [zoom=17]{ line-width: 8; }
       [zoom=18]{ line-width: 9; }
       [zoom>=19]{ line-width: 12; }
-      
       [seasonal='yes']{
         line-color: lighten(@water,16%); 
-        
         ::seasonal  {
           line-color: @water;
           line-dasharray: 6,1;
