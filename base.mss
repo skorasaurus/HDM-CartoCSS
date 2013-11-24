@@ -218,24 +218,34 @@ Map {
   line-cap: round;
   line-join: round;
     [type='stream'] {
-     [seasonal='yes']{
+      [seasonal='yes']{
         line-color: @water;
         line-cap: butt;
         [zoom=15] {
-                  line-width: 4;
-                  line-dasharray: 9,7,2;}
-        [zoom=16] {line-dasharray: 9,7,2;}  
-        [zoom=17] {line-dasharray: 9,7,2;}
-        [zoom>=18] {line-dasharray: 9,7,2;}
-         }
-     
+          line-width: 0.6;
+          line-dasharray: 9,3;
+          }
+        [zoom=16] {
+          line-width: 0.8;     
+          line-dasharray: 14,6;
+          }
+        [zoom=17] {
+          line-width: 1;
+          line-dasharray: 16,7;
+          }
+        [zoom>=18] {
+          line-width: 1.75;
+          line-dasharray: 20,10;
+          }
+
+      }
     [zoom=15]{ line-width: 0.6; }
     [zoom=16]{ line-width: 0.8; }
     [zoom=17]{ line-width: 1; }
     [zoom=18]{ line-width: 1.5; }
     [zoom>18]{ line-width: 2; }
        
-  }
+    }
     [type='ditch'],
     [type='drain'] {
       [zoom=15]{ line-width: 0.1; }
