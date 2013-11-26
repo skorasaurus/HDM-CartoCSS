@@ -202,6 +202,18 @@ Map {
   line-color: @water;
   [type='river'],
   [type='canal'] {
+      [seasonal='yes']{
+        line-cap: butt;
+        line-color: @water;
+        [zoom=13] {
+          line-width: 1;
+          line-dasharray: 12,6;
+        }
+        [zoom=14] {
+          line-width: 1.5;
+          line-dasharray: 12,6;
+        }
+      }    
     line-cap: round;
     line-join: round;
     [zoom=13]{ line-width: 1; }
@@ -215,25 +227,38 @@ Map {
   
 #waterway_high[zoom>=15] {
   line-color: @water;
-  [type='river'],
-  [type='canal'] {
-    ::seasonal {
-      line-color: lighten(@water, 10%);
-      line-dasharray: 4,4;
+  line-cap: round;
+  line-join: round;
+  [type='river'] {
+      [seasonal='yes']{
       line-cap: butt;
-    }
-    ::default {
-      line-color: @water;
-      line-cap: round;
-      line-join: round;
-    }
-    ::default, ::seasonal[seasonal='yes'] {
-      line-width: 6;
+        line-color: @water;
+        [zoom=15] {
+          line-width: 6;
+          line-dasharray: 12,6;
+          }
+        [zoom=16] {
+          line-width: 7;
+          line-dasharray: 14,6;
+          }
+        [zoom=17] {
+          line-width: 8;
+          line-dasharray: 16,7;
+          }
+        [zoom>=18] {
+          line-width: 9;
+          line-dasharray: 24,12;
+          }
+        [zoom>=19] {
+          line-width: 12;
+          line-dasharray: 24,12;
+          }
+       }   
+      [zoom=15]{ line-width: 6; }
       [zoom=16]{ line-width: 7; }
       [zoom=17]{ line-width: 8; }
       [zoom=18]{ line-width: 9; }
       [zoom>=19]{ line-width: 12; }
-    }
   }
   [type='stream'] {
     [zoom=15]{ line-width: 0.6; }
