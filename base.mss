@@ -207,7 +207,7 @@ Map {
         line-color: @water;
         [zoom=13] {
           line-width: 1;
-          line-dasharray: 12,6;
+          line-dasharray: 8,4;
         }
         [zoom=14] {
           line-width: 1.5;
