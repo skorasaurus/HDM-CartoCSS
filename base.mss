@@ -191,15 +191,13 @@ Map {
 
 #waterway_low[zoom>=8][zoom<=12] {
   line-color: @water;
+  line-cap: round;
+  line-join: round;
   [type='river'],
   [type='canal'] {
       [seasonal='yes']{
         line-cap: butt;
         line-color: @water;
-        [zoom=8] {
-          line-width: 0.1;
-          line-dasharray: 1,2;
-        }
         [zoom=10] {
           line-width: 0.4;
           line-dasharray: 6,3;
@@ -213,8 +211,7 @@ Map {
           line-dasharray: 12,6;
         }
       }    
-    line-cap: round;
-    line-join: round;
+   
   [zoom=8] { line-width: 0.1; }
   [zoom=9] { line-width: 0.2; }
   [zoom=10]{ line-width: 0.4; }
@@ -227,24 +224,32 @@ Map {
   line-color: @water;
   [type='river'],
   [type='canal'] {
-      [seasonal='yes']{
-        line-cap: butt;
-        line-color: @water;
-        [zoom=13] {
-          line-width: 1;
-          line-dasharray: 8,4;
-        }
-        [zoom=14] {
-          line-width: 1.5;
-          line-dasharray: 16,6;
-        }
-      }    
     line-cap: round;
     line-join: round;
+    [seasonal='yes']{
+      line-cap: butt;
+      line-color: @water;
+      [zoom=13] {
+        line-width: 1;
+        line-dasharray: 8,4;
+      }
+      [zoom=14] {
+        line-width: 1.5;
+        line-dasharray: 16,6;
+      }
+    }    
     [zoom=13]{ line-width: 1; }
     [zoom=14]{ line-width: 1.5; }
   }
   [type='stream'] {
+   [seasonal='yes'] {
+     line-cap: butt;
+     line-color: @water;
+     [zoom=14] {
+       line-width: 0.4;
+       line-dasharray: 8,4;
+     }
+    }    
     [zoom=13]{ line-width: 0.2; }
     [zoom=14]{ line-width: 0.4; }
   }
@@ -264,7 +269,7 @@ Map {
           }
         [zoom=16] {
           line-width: 7;
-          line-dasharray: 28,6;
+          line-dasharray: 28,8;
           }
         [zoom=17] {
           line-width: 8;
@@ -285,12 +290,37 @@ Map {
       [zoom=18]{ line-width: 9; }
       [zoom>=19]{ line-width: 12; }
   }
-  [type='stream'] {
-    [zoom=15]{ line-width: 0.6; }
-    [zoom=16]{ line-width: 0.8; }
-    [zoom=17]{ line-width: 1; }
-    [zoom=18]{ line-width: 1.5; }
-    [zoom>18]{ line-width: 2; }
+      [type='stream'] {
+        [seasonal='yes']{
+          line-color: @water;
+          line-cap: butt;
+          [zoom=15] {
+            line-width: 0.6;
+            line-dasharray: 24,7;
+          }
+          [zoom=16] {
+            line-width: 0.8;     
+            line-dasharray: 28,8;
+          }
+          [zoom=17] {
+            line-width: 1;
+            line-dasharray: 16,7;
+          }
+          [zoom=18] {
+            line-width: 1.5;
+            line-dasharray: 20,10;
+          }
+          [zoom>=19] {
+            line-width: 2;
+            line-dasharray: 28,14;
+          }
+
+        } 
+        [zoom=15]{ line-width: 0.6; }
+        [zoom=16]{ line-width: 0.8; }
+        [zoom=17]{ line-width: 1; }
+        [zoom=18]{ line-width: 1.5; }
+        [zoom>=19]{ line-width: 2; }
   }
   [type='ditch'],
   [type='drain'] {
